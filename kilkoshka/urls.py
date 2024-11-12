@@ -20,7 +20,7 @@ from django.views.decorators.cache import never_cache
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls ),
     path('', include('kilkoshechka.urls')),
 ]
 
