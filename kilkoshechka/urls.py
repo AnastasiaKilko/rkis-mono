@@ -9,5 +9,6 @@ urlpatterns = [
     path('accounts/login', views.BBLoginView.as_view(), name='login'),
     path('accounts/profile/change/', views.ChangeUserInfoView.as_view(), name='profile_change'),
     path('accounts/profile/', views.profile, name='profile'),
-    path('acconts/logout/', views.BBLogoutView.as_view(), name='logout')
+    path('acconts/logout/', views.BBLogoutView.as_view(), name='logout'),
+    path('accounts/password/change/', views.BBPasswordChangeView.as_view(), name='password_change')
 ]
