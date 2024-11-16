@@ -12,6 +12,9 @@ from django.views.generic import UpdateView
 from .forms import ChangeUserInfoForm
 from .models import AdvUser
 from django.contrib.auth.views import PasswordChangeView
+from django.views.generic import CreateView
+from .forms import RegisterUserForm
+from django.views.generic import TemplateView
 
 # Create your views here.
 
@@ -60,3 +63,12 @@ class BBPasswordChangeView(SuccessMessageMixin, LoginRequiredMixin, PasswordChan
    template_name = 'main/password_change.html'
    success_url = reverse_lazy('main:profile')
    success_message = 'Пароль пользователя изменен'
+
+class RegisterUserView(CreateView):
+   model = AdvUser
+   template_name = 'main/register_user.html'
+   form_class = RegisterUserForm
+   success_url = reverse_lazy('main:register_done')
+
+class RegisterDoneView(TemplateView):
+   template_name = 'main/register_done.html'
